@@ -1,7 +1,4 @@
 import React from "react";
-
-import { Reveal } from "../UI/Reveal";
-
 import {
   SquiggleVertical,
   PillShape,
@@ -12,222 +9,107 @@ import {
 const About: React.FC = () => {
   return (
     <section
-      /* Added ID here for direct scrolling and adjusted padding */
-
       id="about"
       className="
-
-        py-1 md:py-32
-
+        py-8 md:py-24
         px-6 md:px-8 lg:px-16
-
         w-full mx-auto
-
         flex flex-col md:flex-row
-
-        gap-20 md:gap-16 lg:gap-24
-
+        gap-16 lg:gap-24
         items-start
-
         overflow-hidden
-
       "
     >
-      {/* LEFT ABSTRACT SHAPES - Hidden on mobile for cleaner layout */}
+      {/* ================= LEFT SHAPES (HERO STYLE) ================= */}
+      <div className="hidden md:flex w-5/12 justify-center gap-10 md:-translate-y-12 lg:-translate-y-16">
+        {/* ---------- COLUMN 1 ---------- */}
+        <div className="flex flex-col gap-8 items-center">
+          {/* Dark blue pill */}
+          <PillShape
+            color="#204E62"
+            className="w-28 h-64 lg:w-32 lg:h-72 shadow-xl"
+          >
+            <SquiggleVertical color="#FA934D" className="mx-auto scale-125" />
+          </PillShape>
 
-      <div
-        className="
+          {/* Small flower */}
+          <PillShape
+            color="#2B687F"
+            className="w-24 h-24 lg:w-28 lg:h-28 shadow-lg"
+          >
+            <FlowerShape className="w-12 h-12 lg:w-14 lg:h-14" />
+          </PillShape>
 
-          hidden md:flex flex-col gap-8 items-center w-5/12
-
-          md:-translate-y-12 lg:-translate-y-20
-
-        "
-      >
-        <div className="flex gap-6 items-end">
-          <Reveal delay={0.2} direction="right">
-            <PillShape
-              color="#204E62"
-              className="w-32 h-64 lg:w-40 lg:h-80 relative overflow-hidden shadow-2xl"
-            >
-              <SquiggleVertical
-                color="#FA934D"
-                className="mx-auto mt-10 md:scale-125"
-              />
-            </PillShape>
-          </Reveal>
-
-          <Reveal delay={0.3} direction="left">
-            <PillShape
-              color="#FA934D"
-              className="w-32 h-80 lg:w-40 lg:h-96 relative overflow-hidden shadow-2xl"
-            >
-              <SquiggleVertical
-                color="#F4F0EA"
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-150"
-              />
-            </PillShape>
-          </Reveal>
+          {/* Orange pill */}
+          <PillShape
+            color="#FA934D"
+            className="w-28 h-64 lg:w-32 lg:h-72 shadow-xl"
+          >
+            <SquiggleVertical color="#204E62" className="mx-auto scale-125" />
+          </PillShape>
         </div>
 
-        <div className="flex gap-6 items-start">
-          <Reveal delay={0.4} direction="right">
-            <div className="flex flex-col gap-6">
-              <PillShape
-                color="#2B687F"
-                className="w-28 h-28 lg:w-36 lg:h-36 shadow-xl"
-              >
-                <FlowerShape className="w-16 h-16 lg:w-20 lg:h-20" />
-              </PillShape>
+        {/* ---------- COLUMN 2 ---------- */}
+        <div className="flex flex-col gap-8 items-center mt-16">
+          {/* Orange pill */}
+          <PillShape
+            color="#FA934D"
+            className="w-28 h-72 lg:w-32 lg:h-80 shadow-xl"
+          >
+            <SquiggleVertical color="#F4F0EA" className="mx-auto scale-125" />
+          </PillShape>
 
-              <PillShape
-                color="#FA934D"
-                className="w-28 h-64 lg:w-36 lg:h-72 relative overflow-hidden shadow-xl"
-              >
-                <SquiggleVertical
-                  color="#204E62"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-125"
-                />
-              </PillShape>
-            </div>
-          </Reveal>
+          {/* Star */}
+          <PillShape
+            color="#204E62"
+            className="w-24 h-24 lg:w-28 lg:h-28 shadow-lg"
+          >
+            <StarBurst className="w-12 h-12 lg:w-14 lg:h-14" />
+          </PillShape>
 
-          <Reveal delay={0.5} direction="left">
-            <div className="flex flex-col gap-6">
-              <PillShape
-                color="#204E62"
-                className="w-28 h-28 lg:w-36 lg:h-36 shadow-xl"
-              >
-                <StarBurst className="w-16 h-16 lg:w-20 lg:h-20" />
-              </PillShape>
+          {/* Orange pill */}
+          <PillShape
+            color="#FA934D"
+            className="w-28 h-64 lg:w-32 lg:h-72 shadow-xl"
+          >
+            <SquiggleVertical color="#F4F0EA" className="mx-auto scale-125" />
+          </PillShape>
 
-              <PillShape
-                color="#FA934D"
-                className="w-28 h-40 lg:w-36 lg:h-48 relative overflow-hidden shadow-xl"
-              >
-                <SquiggleVertical
-                  color="#204E62"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-16 scale-125"
-                />
-              </PillShape>
-
-              <PillShape
-                color="#2B687F"
-                className="w-28 h-28 lg:w-36 lg:h-36 shadow-xl"
-              >
-                <FlowerShape className="w-12 h-12 lg:w-16 lg:h-16" />
-              </PillShape>
-            </div>
-          </Reveal>
+          <PillShape
+            color="#2B687F"
+            className="w-24 h-24 lg:w-28 lg:h-28 shadow-lg"
+          >
+            <FlowerShape className="w-12 h-12 lg:w-14 lg:h-14" />
+          </PillShape>
         </div>
       </div>
 
-      {/* RIGHT CONTENT */}
-
-      <div
-        className="
-
-          flex-1 relative w-full
-
-          /* Removed negative translate on mobile to prevent navbar overlap */
-
-          md:-translate-y-20 lg:-translate-y-24
-
-        "
-      >
-        {/* ABOUT LABEL */}
-
-        <div className="mb-6 ml-auto mr-4 sm:mr-12 md:mr-28 w-fit">
-          <span className="font-body text-brand-teal text-xl md:text-2xl font-bold uppercase tracking-wider">
-            About!
+      {/* ================= RIGHT CONTENT ================= */}
+      <div className="flex-1 relative w-full md:-translate-y-16 lg:-translate-y-20">
+        {/* Heading */}
+        <div className="mb-10 text-left">
+          <span className="block font-body text-brand-teal text-lg md:text-xl font-bold uppercase tracking-wider mb-3">
+            About
           </span>
-        </div>
 
-        {/* HEADING */}
-
-        <Reveal>
-          <h2
-            className="
-
-              font-display
-
-              text-[2.5rem] sm:text-5xl md:text-6xl lg:text-8xl
-
-              text-brand-orange
-
-              text-right
-
-              mb-10
-
-              leading-[0.9]
-
-            "
-          >
+          <h2 className="font-display text-[2.2rem] sm:text-5xl md:text-6xl lg:text-8xl text-brand-orange leading-[0.9]">
             GET TO KNOW US
           </h2>
-        </Reveal>
+        </div>
 
-        {/* CONTENT BOXES */}
-
-        <Reveal delay={0.3} width="100%">
-          <div className="flex flex-col gap-8 md:gap-12">
-            <div
-              className="
-
-                bg-brand-teal
-
-                p-8 md:p-16
-
-                shadow-[12px_12px_0px_0px_rgba(32,78,98,1)]
-
-                md:shadow-[20px_20px_0px_0px_rgba(32,78,98,1)]
-
-                rounded-2xl
-
-                relative border-2 border-brand-dark
-
-              "
-            >
-              <p className="text-white text-right text-lg md:text-3xl lg:text-4xl leading-relaxed">
-                We don't do guesswork. We don't chase trends for vanity. We
-                build businesses that grow with{" "}
-                <span className="text-brand-orange font-extrabold">
-                  strategy
-                </span>
-                ,{" "}
-                <span className="text-brand-orange font-extrabold">
-                  storytelling
-                </span>
-                , and systems that actually work.
-              </p>
-            </div>
-
-            <div
-              className="
-
-                bg-brand-teal
-
-                p-8 md:p-16
-
-                shadow-[12px_12px_0px_0px_rgba(32,78,98,1)]
-
-                md:shadow-[20px_20px_0px_0px_rgba(32,78,98,1)]
-
-                rounded-2xl
-
-                relative border-2 border-brand-dark
-
-              "
-            >
-              <p className="text-white text-right text-lg md:text-3xl lg:text-4xl leading-relaxed">
-                We believe in making impact, not just noise. Your brand deserves
-                to be heard by the right people, at the right time.
-              </p>
-            </div>
-          </div>
-        </Reveal>
+        {/* Content box */}
+        <div className="bg-brand-teal p-8 md:p-16 shadow-[16px_16px_0px_rgba(32,78,98,1)] rounded-2xl border-2 border-brand-dark">
+          <p className="text-white text-right text-lg md:text-3xl lg:text-4xl leading-relaxed">
+            We don't do guesswork. We don't chase trends for vanity. We build
+            businesses that grow with{" "}
+            <span className="text-brand-orange font-extrabold">strategy</span>,{" "}
+            <span className="text-brand-orange font-extrabold">
+              storytelling
+            </span>
+            , and systems that actually work.
+          </p>
+        </div>
       </div>
-      <br />
     </section>
   );
 };

@@ -5,23 +5,28 @@ import CardSwap, { Card } from "../UI/CardSwap";
 const expertiseData = [
   {
     id: 1,
-    title: "BUSINESS CONSULTATION",
-    text: "Strategic advice and actionable plans to scale your business.",
+    title: "BUSINESS CONSULTATION & GROWTH",
+    text: "Clarity before scale. We define what matters, then build for growth.",
   },
   {
     id: 2,
     title: "SOCIAL MEDIA MARKETING",
-    text: "Amplifying your brand voice through targeted content.",
+    text: "Consistency is easy. Impact is intentional.",
   },
   {
     id: 3,
     title: "EXPERIENCE MANAGEMENT",
-    text: "Crafting unforgettable touchpoints that resonate with your audience.",
+    text: "Your brand is felt, not just seen. We make it memorable.",
   },
   {
     id: 4,
     title: "BRAND BUILDING",
-    text: "Developing a unique identity that stands out in the marketplace.",
+    text: "Recognition beats noise. We build brands that stick.",
+  },
+  {
+    id: 5,
+    title: "ADVERTISEMENT CAMPAIGNS",
+    text: "Clicks are common. Conversions aren’t.",
   },
 ];
 
@@ -46,14 +51,18 @@ const initialWorkItems = [
     title: "Brand Identity",
     img: "https://picsum.photos/600/900?random=4",
   },
+  {
+    id: 5,
+    title: "Ad Campaign",
+    img: "https://picsum.photos/600/900?random=5",
+  },
 ];
 
 const Work: React.FC = () => {
-  const [activeId, setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState<number | null>(null);
   const [cards, setCards] = useState(initialWorkItems);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile properly (no window crash)
   useEffect(() => {
     const checkScreen = () => {
       setIsMobile(window.innerWidth < 768);
@@ -75,39 +84,40 @@ const Work: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-brand-orange min-h-screen py-8 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden flex flex-col md:flex-row items-center w-full"
+      className="bg-brand-orange min-h-screen py-4 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden w-full"
     >
       <div className="w-full max-w-[1800px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-32">
         {/* LEFT TEXT */}
         <div className="w-full md:w-5/12 text-brand-dark flex flex-col justify-center">
           <Reveal>
-            <h4 className="text-sm sm:text-base md:text-lg font-bold tracking-[0.2em] mb-4 uppercase border-b-4 border-brand-dark inline-block pb-2">
-              Our Expertise
-            </h4>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[8rem] xl:text-[10rem] text-brand-teal mb-10 md:mb-16 leading-[0.9]">
-              SERVICES
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] xl:text-[7rem] mb-14 leading-[0.9]">
+              <span
+                className="block text-white"
+                style={{ fontFamily: "Pacifico, cursive" }}
+              >
+                Our
+              </span>
+              <span
+                className="block text-[#345C72]"
+                style={{ fontFamily: "Impact, sans-serif" }}
+              >
+                Services
+              </span>
             </h2>
           </Reveal>
 
           <div className="space-y-8 md:space-y-10">
             {expertiseData.map((item, idx) => (
-              <Reveal key={item.id} delay={0.1 * idx + 0.3}>
+              <Reveal key={item.id} delay={0.1 * idx + 0.2}>
                 <div
                   onClick={() => handleSwap(item.id)}
-                  className={`group cursor-pointer border-l-4 pl-4 md:pl-6 transition-all duration-300 ${
-                    activeId === item.id
-                      ? "border-white"
-                      : "border-transparent hover:border-white/50"
-                  }`}
+                  className="group cursor-pointer border-l-4 pl-4 md:pl-6 transition-all duration-300 border-transparent hover:border-white"
                 >
                   <h3
-                    className={`font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl uppercase mb-2 transition-colors ${
+                    className={`font-display text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase mb-2 transition-colors ${
                       activeId === item.id
                         ? "text-white"
-                        : "text-brand-teal group-hover:text-white"
+                        : "text-[#345C72] group-hover:text-white"
                     }`}
                   >
                     {item.title}
@@ -129,8 +139,14 @@ const Work: React.FC = () => {
         </div>
 
         {/* RIGHT CARDS */}
-        <div className="w-full md:w-7/12 flex items-center justify-center md:justify-end mt-8 md:mt-0">
-          <div className="relative w-full flex justify-center md:justify-end h-[320px] sm:h-[380px] md:h-[600px] lg:h-[650px]">
+        <div className="w-full md:w-7/12 mt-10 md:mt-0 flex justify-center md:justify-end">
+          {/* 🔥 Mobile Right Push Added Here */}
+          <div
+            className="relative h-[320px] sm:h-[380px] md:h-[600px] lg:h-[650px] 
+                          w-[280px] sm:w-[320px] md:w-full 
+                          mx-auto md:mx-0 
+                          translate-x-6 sm:translate-x-8 md:translate-x-0"
+          >
             <CardSwap
               cardDistance={isMobile ? 25 : 60}
               verticalDistance={isMobile ? 8 : 35}
@@ -139,7 +155,7 @@ const Work: React.FC = () => {
                 <Card key={item.id}>
                   <div
                     onClick={() => handleSwap(item.id)}
-                    className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-none h-full rounded-3xl overflow-hidden border-4 border-brand-dark shadow-2xl bg-gray-900 group cursor-pointer"
+                    className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-brand-dark shadow-2xl bg-gray-900 group cursor-pointer"
                   >
                     <img
                       src={item.img}

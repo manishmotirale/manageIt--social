@@ -21,12 +21,13 @@ const faqs = [
 ];
 
 const Contact: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="contact" className="bg-brand-dark py-8 px-4 md:px-12">
+    <section id="contact" className="bg-brand-dark py-10 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        {/* 🔥 Changed items-start → items-center */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left - Info & FAQ */}
           <div>
             <Reveal>
@@ -52,6 +53,7 @@ const Contact: React.FC = () => {
                       <span className="font-semibold text-gray-200">
                         {faq.question}
                       </span>
+
                       <motion.span
                         animate={{ rotate: activeIndex === index ? 180 : 0 }}
                         className="text-brand-orange"
@@ -91,7 +93,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right - Form (Brightened Version) */}
+          {/* Right - Form */}
           <div className="bg-white/[0.08] p-8 md:p-12 rounded-3xl border border-white/20 backdrop-blur-md shadow-2xl">
             <form className="space-y-6">
               <div className="space-y-2">
@@ -111,7 +113,7 @@ const Contact: React.FC = () => {
                 </label>
                 <input
                   type="tel"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91"
                   className="w-full bg-white/10 border border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:bg-white/15 transition-all"
                 />
               </div>
@@ -137,14 +139,14 @@ const Contact: React.FC = () => {
                   className="w-full bg-white/10 border border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:bg-white/15 transition-all"
                 />
               </div>
+
               <motion.button
                 whileHover={{
                   scale: 1.02,
-                  boxShadow: "0px 20px 40px rgba(255, 103, 0, 0.4)", // Brightened shadow
+                  boxShadow: "0px 20px 40px rgba(255, 103, 0, 0.4)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-brand-orange text-white py-5 rounded-xl mt-8 shadow-lg shadow-brand-orange/30 transition-all
-             font-black uppercase tracking-[0.2em] text-sm" // Typography changes here
+                className="w-full bg-brand-orange text-white py-5 rounded-xl mt-8 shadow-lg shadow-brand-orange/30 transition-all font-black uppercase tracking-[0.2em] text-sm"
               >
                 Send Message
               </motion.button>

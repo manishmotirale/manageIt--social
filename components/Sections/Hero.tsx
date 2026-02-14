@@ -12,37 +12,28 @@ const Hero: React.FC = () => {
     <section
       id="home"
       className="
-    md:min-h-screen
-    flex flex-row items-start justify-between
-    relative overflow-hidden
-    px-4 sm:px-6 md:px-12 lg:px-20
-    pt-24 sm:pt-28 pb-0
-  "
+        flex flex-row items-start justify-between
+        relative overflow-hidden overflow-x-hidden
+h-[75vh] md:h-auto px-4 sm:px-6 md:px-12 lg:px-20
+        pt-24 sm:pt-28 pb-0
+      "
     >
       {/* LEFT TEXT */}
-      <div
-        className="
-          w-1/2 max-w-[50%]
-          z-10 flex flex-col items-start justify-start
-          pt-3 md:pt-12 lg:pt-16
-          scale-[0.85] sm:scale-90 md:scale-100
-          origin-top-left
-        "
-      >
+      <div className="w-1/2 max-w-[50%] shrink-0 z-10 flex flex-col items-start justify-start pt-3 md:pt-12 lg:pt-16 origin-top-left ml-3">
         <Reveal>
-          <h1 className="font-display text-[3.2rem] sm:text-[4rem] md:text-[5rem] lg:text-[7rem] xl:text-[8rem] text-brand-orange leading-[0.95]">
+          <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem] text-brand-orange leading-[0.9]">
             NO OFFENSE,
           </h1>
         </Reveal>
 
         <Reveal delay={0.2}>
-          <h2 className="font-display text-[1.6rem] sm:text-[2.4rem] md:text-[4rem] lg:text-[4.5rem] text-brand-dark mt-4 mb-6 max-w-3xl">
+          <h2 className="font-display text-[1.4rem] sm:text-[2.1rem] md:text-[3.5rem] lg:text-[4rem] text-brand-dark mt-4 mb-6 max-w-3xl">
             But we do marketing better than your current agency.
           </h2>
         </Reveal>
 
         <Reveal delay={0.4}>
-          <div className="bg-[#FFDcb0] px-8 py-4 rounded-full shadow-sm">
+          <div className="bg-[#FFDcb0] px-6 text-center py-1 rounded-full shadow-sm">
             <p className="text-brand-dark font-bold text-lg">
               For brands that refuse to blend in
             </p>
@@ -51,21 +42,13 @@ const Hero: React.FC = () => {
       </div>
 
       {/* RIGHT SHAPES */}
-      <div
-        className="
-          w-1/2
-          flex flex-row items-start justify-end gap-6 md:gap-10
-          relative pr-6 md:pr-12
-          scale-[0.65] sm:scale-[0.8] md:scale-100
-          origin-top-right
-        "
-      >
+      <div className="w-1/2 shrink-0 flex flex-row items-start justify-end gap-6 md:gap-10 relative pr-6 md:pr-12 scale-[0.65] sm:scale-[0.8] md:scale-100 origin-top-right">
         {/* COLUMN 1 */}
         <div className="flex flex-col gap-6 md:gap-8">
           <div className="w-24 h-48 md:w-28 md:h-56 lg:w-36 lg:h-64 bg-brand-dark rounded-b-full shadow-xl md:-mt-12">
             <SquiggleVertical
               color="#FA934D"
-              className="mx-auto mt-10 md:scale-125"
+              className="mx-auto md:mt-11 mt-4 md:scale-150"
             />
           </div>
 
@@ -88,7 +71,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* COLUMN 2 */}
-        <div className="flex flex-col gap-6 md:gap-6 mt-10">
+        <div className="flex flex-col gap-6 mt-10">
           <PillShape
             color="#2B687F"
             className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 shadow-xl"
