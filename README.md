@@ -128,8 +128,8 @@ npm run dev
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=radical&hide_border=true" height="160" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=your-username&theme=radical&hide_border=true" height="160" />
+  <img src="https://github-readme-stats.vercel.app/api?username=manishmotirale&show_icons=true&theme=radical&hide_border=true" height="160" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=manishmotirale&theme=radical&hide_border=true" height="160" />
 </p>
 
 ---
@@ -153,12 +153,6 @@ but a strategic growth tool.
 
 ---
 
-## 📬 Connect
-
-* 📧 Email: [your@email.com](mailto:manishmotirale@gmail.com)
-* 💼 LinkedIn: [your-link](https://www.linkedin.com/in/manish-motirale)
-
----
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:204E62,100:FA934D&height=150&section=footer"/>
