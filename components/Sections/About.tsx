@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Reveal } from "../UI/Reveal";
+
 import {
   SquiggleVertical,
   PillShape,
@@ -10,21 +12,36 @@ import {
 const About: React.FC = () => {
   return (
     <section
+      /* Added ID here for direct scrolling and adjusted padding */
+
+      id="about"
       className="
-        py-16 md:py-24
-        px-4 md:px-8 lg:px-16
+
+        py-1 md:py-32
+
+        px-6 md:px-8 lg:px-16
+
         w-full mx-auto
+
         flex flex-col md:flex-row
-        gap-12 md:gap-16 lg:gap-24
+
+        gap-20 md:gap-16 lg:gap-24
+
         items-start
+
         overflow-hidden
+
       "
     >
-      {/* LEFT ABSTRACT SHAPES */}
+      {/* LEFT ABSTRACT SHAPES - Hidden on mobile for cleaner layout */}
+
       <div
         className="
+
           hidden md:flex flex-col gap-8 items-center w-5/12
-          -translate-y-12 lg:-translate-y-20
+
+          md:-translate-y-12 lg:-translate-y-20
+
         "
       >
         <div className="flex gap-6 items-end">
@@ -106,90 +123,111 @@ const About: React.FC = () => {
       </div>
 
       {/* RIGHT CONTENT */}
+
       <div
         className="
-    flex-1 relative w-full
-    -translate-y-10 sm:-translate-y-14 md:-translate-y-20 lg:-translate-y-24
-  "
-      >
-        {/* REAL SCROLL ANCHOR */}
-        <div id="about" className="absolute -top-32 md:-top-40"></div>
 
+          flex-1 relative w-full
+
+          /* Removed negative translate on mobile to prevent navbar overlap */
+
+          md:-translate-y-20 lg:-translate-y-24
+
+        "
+      >
         {/* ABOUT LABEL */}
-        <div className="mb-4 sm:mb-6 ml-auto mr-4 sm:mr-12 md:mr-28 w-fit">
-          <span className="font-body text-brand-teal text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider">
+
+        <div className="mb-6 ml-auto mr-4 sm:mr-12 md:mr-28 w-fit">
+          <span className="font-body text-brand-teal text-xl md:text-2xl font-bold uppercase tracking-wider">
             About!
           </span>
         </div>
 
         {/* HEADING */}
+
         <Reveal>
           <h2
             className="
-        font-display
-        text-2xl sm:text-3xl md:text-5xl lg:text-8xl
-        text-brand-orange
-        text-right
-        mb-6 sm:mb-8 md:mb-10
-        leading-[0.9]
-      "
+
+              font-display
+
+              text-[2.5rem] sm:text-5xl md:text-6xl lg:text-8xl
+
+              text-brand-orange
+
+              text-right
+
+              mb-10
+
+              leading-[0.9]
+
+            "
           >
             GET TO KNOW US
           </h2>
         </Reveal>
 
-        {/* CONTENT BOX */}
+        {/* CONTENT BOXES */}
+
         <Reveal delay={0.3} width="100%">
-          <div
-            className="
-        bg-brand-teal
-        p-6 sm:p-8 md:p-16
-        shadow-[10px_10px_0px_0px_rgba(32,78,98,1)]
-        md:shadow-[20px_20px_0px_0px_rgba(32,78,98,1)]
-        rounded-xl
-        relative group overflow-hidden
-        border-2 border-brand-dark
-      "
-          >
-            <p className="text-white text-right text-base sm:text-lg md:text-3xl lg:text-4xl">
-              We don't do guesswork. We don't chase trends for vanity. We build
-              businesses that grow with{" "}
-              <span className="text-brand-orange font-extrabold">strategy</span>
-              ,
-              <span className="text-brand-orange font-extrabold">
-                {" "}
-                storytelling
-              </span>
-              , and systems that actually work.
-            </p>
-          </div>
-          <br />
-          <br />
-          <div
-            className="
-        bg-brand-teal
-        p-6 sm:p-8 md:p-16
-        shadow-[10px_10px_0px_0px_rgba(32,78,98,1)]
-        md:shadow-[20px_20px_0px_0px_rgba(32,78,98,1)]
-        rounded-xl
-        relative group overflow-hidden
-        border-2 border-brand-dark
-      "
-          >
-            <p className="text-white text-right text-base sm:text-lg md:text-3xl lg:text-4xl">
-              We don't do guesswork. We don't chase trends for vanity. We build
-              businesses that grow with{" "}
-              <span className="text-brand-orange font-extrabold">strategy</span>
-              ,
-              <span className="text-brand-orange font-extrabold">
-                {" "}
-                storytelling
-              </span>
-              , and systems that actually work.
-            </p>
+          <div className="flex flex-col gap-8 md:gap-12">
+            <div
+              className="
+
+                bg-brand-teal
+
+                p-8 md:p-16
+
+                shadow-[12px_12px_0px_0px_rgba(32,78,98,1)]
+
+                md:shadow-[20px_20px_0px_0px_rgba(32,78,98,1)]
+
+                rounded-2xl
+
+                relative border-2 border-brand-dark
+
+              "
+            >
+              <p className="text-white text-right text-lg md:text-3xl lg:text-4xl leading-relaxed">
+                We don't do guesswork. We don't chase trends for vanity. We
+                build businesses that grow with{" "}
+                <span className="text-brand-orange font-extrabold">
+                  strategy
+                </span>
+                ,{" "}
+                <span className="text-brand-orange font-extrabold">
+                  storytelling
+                </span>
+                , and systems that actually work.
+              </p>
+            </div>
+
+            <div
+              className="
+
+                bg-brand-teal
+
+                p-8 md:p-16
+
+                shadow-[12px_12px_0px_0px_rgba(32,78,98,1)]
+
+                md:shadow-[20px_20px_0px_0px_rgba(32,78,98,1)]
+
+                rounded-2xl
+
+                relative border-2 border-brand-dark
+
+              "
+            >
+              <p className="text-white text-right text-lg md:text-3xl lg:text-4xl leading-relaxed">
+                We believe in making impact, not just noise. Your brand deserves
+                to be heard by the right people, at the right time.
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>
+      <br />
     </section>
   );
 };

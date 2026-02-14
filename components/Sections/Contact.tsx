@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section id="contact" className="bg-brand-dark py-24 px-4 md:px-12">
+    <section id="contact" className="bg-brand-dark py-8 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left - Info & FAQ */}

@@ -75,7 +75,7 @@ const Work: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-brand-orange min-h-screen py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden flex flex-col md:flex-row items-center w-full"
+      className="bg-brand-orange min-h-screen py-8 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden flex flex-col md:flex-row items-center w-full"
     >
       <div className="w-full max-w-[1800px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-32">
         {/* LEFT TEXT */}
