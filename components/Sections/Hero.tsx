@@ -21,19 +21,19 @@ h-[75vh] md:h-auto px-4 sm:px-6 md:px-12 lg:px-20
       {/* LEFT TEXT */}
       <div className="w-1/2 max-w-[50%] shrink-0 z-10 flex flex-col items-start justify-start pt-3 md:pt-12 lg:pt-16 origin-top-left ml-3">
         <Reveal>
-          <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem] text-brand-orange leading-[0.9]">
+          <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem] text-brand-orange leading-[1.05]">
             NO OFFENSE,
           </h1>
         </Reveal>
 
         <Reveal delay={0.2}>
-          <h2 className="font-display text-[1.4rem] sm:text-[2.1rem] md:text-[3.5rem] lg:text-[4rem] text-[#345C72] mt-4 mb-6 max-w-3xl">
+          <h2 className="font-display text-[1.4rem] sm:text-[2.1rem] md:text-[3.5rem] lg:text-[4rem] text-[#345C72] mt-3 mb-6 max-w-3xl">
             But we do marketing better than your current agency.
           </h2>
         </Reveal>
 
         <Reveal delay={0.4}>
-          <div className="bg-[#FFDcb0] px-6 text-center py-1 rounded-full shadow-sm">
+          <div className="bg-[#FFDcb0] px-2  text-center py-1 rounded-2xl shadow-sm">
             <p className="text-brand-dark font-bold text-lg">
               For brands that refuse to blend in
             </p>

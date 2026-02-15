@@ -84,13 +84,13 @@ const Work: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-brand-orange min-h-screen py-4 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden w-full"
+      className="bg-brand-orange min-h-screen py-8 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden w-full"
     >
       <div className="w-full max-w-[1800px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 lg:gap-32">
         {/* LEFT TEXT */}
         <div className="w-full md:w-5/12 text-brand-dark flex flex-col justify-center">
           <Reveal>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] xl:text-[7rem] mb-14 leading-[0.9]">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] xl:text-[7rem] mb-7 leading-[0.9]">
               <span
                 className="block text-white"
                 style={{ fontFamily: "Pacifico, cursive" }}
@@ -98,7 +98,7 @@ const Work: React.FC = () => {
                 Our
               </span>
               <span
-                className="block text-[#345C72]"
+                className="block text-[#345C72] mt-3 "
                 style={{ fontFamily: "Impact, sans-serif" }}
               >
                 Services
@@ -106,7 +106,7 @@ const Work: React.FC = () => {
             </h2>
           </Reveal>
 
-          <div className="space-y-8 md:space-y-10">
+          <div className="space-y-8 md:space-y-10 md:mt-4">
             {expertiseData.map((item, idx) => (
               <Reveal key={item.id} delay={0.1 * idx + 0.2}>
                 <div
@@ -139,7 +139,7 @@ const Work: React.FC = () => {
         </div>
 
         {/* RIGHT CARDS */}
-        <div className="w-full md:w-7/12 mt-10 md:mt-0 flex justify-center md:justify-end">
+        <div className="w-full md:w-7/12 md:mt-16 mt-2 mb-8 md:mt-0 flex justify-center md:justify-end">
           {/* 🔥 Mobile Right Push Added Here */}
           <div
             className="relative h-[320px] sm:h-[380px] md:h-[600px] lg:h-[650px] 
