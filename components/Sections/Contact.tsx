@@ -7,17 +7,17 @@ const faqs = [
   {
     question: "How long does a typical project take?",
     answer:
-      "Most social media strategies take 2-4 weeks to develop, while full management begins immediately after the strategy phase.",
+      "Most social media strategies take 2–4 weeks to develop, while full management begins immediately after the strategy phase.",
   },
   {
     question: "Do you offer custom packages?",
     answer:
-      "Absolutely! We tailor every plan to your specific goals, whether it's brand awareness, lead gen, or pure community growth.",
+      "Absolutely! We tailor every plan to your specific goals, whether it's brand awareness, lead generation, or community growth.",
   },
   {
     question: "What platforms do you specialize in?",
     answer:
-      "We are experts in Instagram, TikTok, and X (Twitter), focusing on high-engagement short-form content and community building.",
+      "We specialize in Instagram, TikTok, and X (Twitter), focusing on high-engagement short-form content and growth.",
   },
 ];
 
@@ -34,11 +34,15 @@ const Contact: React.FC = () => {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setLoading(true);
     setStatus(null);
 
@@ -56,6 +60,7 @@ const Contact: React.FC = () => {
       );
 
       setStatus("success");
+
       setFormData({
         company: "",
         phone: "",
@@ -65,44 +70,52 @@ const Contact: React.FC = () => {
     } catch (error) {
       console.error(error);
       setStatus("error");
-    } finally {
-      setLoading(false);
     }
+
+    setLoading(false);
   };
 
   return (
-    <section id="contact" className="bg-brand-dark py-10 px-4 md:px-12">
+    <section
+      id="contact"
+      className="bg-brand-dark py-16 px-4 sm:px-6 md:px-12 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left - FAQ */}
-          {/* Left - FAQ */}
-          <div className="w-full max-w-xl ml-auto">
+        {/* GRID */}
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+          {/* LEFT SIDE — FAQ */}
+          <div className="w-full max-w-xl mx-auto md:mx-0 md:ml-auto">
             <Reveal>
-              <h2 className="text-4xl font-bold text-white mb-4">FAQ</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center md:text-left">
+                FAQ
+              </h2>
 
-              <p className="text-gray-300 text-lg w-[25rem] mb-8">
+              <p className="text-gray-300 text-base sm:text-lg mb-8 text-center md:text-left">
                 Ready to level up your social game? Drop us a line and let's
                 create something bold together.
               </p>
             </Reveal>
 
-            <div className="space-y-4 w-[20rem]">
+            <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <Reveal key={index} delay={0.1 * index}>
-                  <div className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm w-[25rem]">
+                <Reveal key={index} delay={index * 0.1}>
+                  <div className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm w-[20rem]">
+                    {/* QUESTION */}
                     <button
                       onClick={() =>
                         setActiveIndex(activeIndex === index ? null : index)
                       }
-                      className="w-[25rem] p-5 text-left flex justify-between items-center hover:bg-white/5 transition"
+                      className="w-full p-4 sm:p-5 text-left flex justify-between items-center hover:bg-white/5 transition"
                     >
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold text-gray-200 text-sm sm:text-base">
                         {faq.question}
                       </span>
 
                       <motion.span
-                        animate={{ rotate: activeIndex === index ? 180 : 0 }}
-                        className="text-brand-orange"
+                        animate={{
+                          rotate: activeIndex === index ? 180 : 0,
+                        }}
+                        className="text-brand-orange flex-shrink-0 ml-3"
                       >
                         <svg
                           width="20"
@@ -111,14 +124,13 @@ const Contact: React.FC = () => {
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
                         >
                           <path d="m6 9 6 6 6-6" />
                         </svg>
                       </motion.span>
                     </button>
 
+                    {/* ANSWER */}
                     <AnimatePresence>
                       {activeIndex === index && (
                         <motion.div
@@ -139,70 +151,76 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right - Contact Form */}
-          <div className="bg-white/10 p-8 md:p-12 rounded-3xl border border-white/20 backdrop-blur-md">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {[
-                {
-                  label: "Company Name *",
-                  name: "company",
-                  placeholder: "Your company name",
-                },
-                {
-                  label: "Contact Number *",
-                  name: "phone",
-                  placeholder: "+91",
-                },
-                {
-                  label: "Email *",
-                  name: "email",
-                  type: "email",
-                  placeholder: "you@gmail.com",
-                },
-                {
-                  label: "Instagram URL (Optional)",
-                  name: "instagram",
-                  placeholder: "https://instagram.com/yourpage",
-                },
-              ].map(({ label, name, placeholder, type }) => (
-                <div key={name} className="space-y-2">
-                  <label className="text-xs font-bold text-gray-200 uppercase tracking-wider ml-1">
-                    {label}
-                  </label>
-                  <input
-                    type={type || "text"}
-                    name={name}
-                    value={(formData as any)[name]}
-                    onChange={handleChange}
-                    placeholder={placeholder}
-                    required={name !== "instagram"}
-                    className="w-full bg-white/10 border border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-brand-orange outline-none"
-                  />
-                </div>
-              ))}
+          {/* RIGHT SIDE — FORM */}
+          <div className="w-full">
+            <div className="bg-white/10 p-6 sm:p-8 md:p-12 rounded-3xl border border-white/20 backdrop-blur-md">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* INPUTS */}
+                {[
+                  {
+                    label: "Company Name *",
+                    name: "company",
+                    placeholder: "Your company name",
+                  },
+                  {
+                    label: "Contact Number *",
+                    name: "phone",
+                    placeholder: "+91",
+                  },
+                  {
+                    label: "Email *",
+                    name: "email",
+                    type: "email",
+                    placeholder: "you@gmail.com",
+                  },
+                  {
+                    label: "Instagram URL (Optional)",
+                    name: "instagram",
+                    placeholder: "https://instagram.com/yourpage",
+                  },
+                ].map((input) => (
+                  <div key={input.name}>
+                    <label className="text-xs font-bold text-gray-200 uppercase tracking-wider ml-1">
+                      {input.label}
+                    </label>
 
-              <motion.button
-                type="submit"
-                disabled={loading}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-brand-orange text-white py-5 rounded-xl font-black uppercase tracking-widest text-sm disabled:opacity-50"
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </motion.button>
+                    <input
+                      type={input.type || "text"}
+                      name={input.name}
+                      value={(formData as any)[input.name]}
+                      onChange={handleChange}
+                      placeholder={input.placeholder}
+                      required={input.name !== "instagram"}
+                      className="w-full mt-2 bg-white/10 border border-white/20 rounded-xl p-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-brand-orange outline-none"
+                    />
+                  </div>
+                ))}
 
-              {status === "success" && (
-                <p className="text-green-400 text-sm text-center">
-                  Message sent successfully!
-                </p>
-              )}
+                {/* BUTTON */}
+                <motion.button
+                  type="submit"
+                  disabled={loading}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-brand-orange text-white py-4 sm:py-5 rounded-xl font-bold uppercase tracking-wider disabled:opacity-50"
+                >
+                  {loading ? "Sending..." : "Send Message"}
+                </motion.button>
 
-              {status === "error" && (
-                <p className="text-red-400 text-sm text-center">
-                  Something went wrong. Try again.
-                </p>
-              )}
-            </form>
+                {/* STATUS */}
+                {status === "success" && (
+                  <p className="text-green-400 text-center text-sm">
+                    Message sent successfully!
+                  </p>
+                )}
+
+                {status === "error" && (
+                  <p className="text-red-400 text-center text-sm">
+                    Something went wrong. Please try again.
+                  </p>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       </div>

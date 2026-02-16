@@ -1,5 +1,6 @@
 import React from "react";
 import { Reveal } from "../UI/Reveal";
+import "../../styles/hero.css";
 import {
   FlowerShape,
   SquiggleVertical,
@@ -12,14 +13,25 @@ const Hero: React.FC = () => {
     <section
       id="home"
       className="
-        flex flex-row items-start justify-between
-        relative overflow-hidden overflow-x-hidden
-h-[75vh] md:h-auto px-4 sm:px-6 md:px-12 lg:px-20
-        pt-24 sm:pt-28 pb-0
-      "
+    hero-section
+    flex flex-row
+    items-start justify-between
+    relative overflow-hidden
+
+    px-4 sm:px-6 md:px-12 lg:px-20
+    pt-16 sm:pt-20 md:pt-28 pb-6
+  "
     >
       {/* LEFT TEXT */}
-      <div className="w-1/2 max-w-[50%] shrink-0 z-10 flex flex-col items-start justify-start pt-3 md:pt-12 lg:pt-16 origin-top-left ml-3">
+      <div
+        className="
+  w-[55%]              /* give text more space */
+  shrink-0
+  z-10
+  flex flex-col items-start
+  pt-2 sm:pt-4 md:pt-12
+"
+      >
         <Reveal>
           <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem] text-brand-orange leading-[1.05]">
             NO OFFENSE,
@@ -42,7 +54,21 @@ h-[75vh] md:h-auto px-4 sm:px-6 md:px-12 lg:px-20
       </div>
 
       {/* RIGHT SHAPES */}
-      <div className="w-1/2 shrink-0 flex flex-row items-start justify-end gap-6 md:gap-10 relative pr-6 md:pr-12 scale-[0.65] sm:scale-[0.8] md:scale-100 origin-top-right">
+      <div
+        className="
+  w-[45%]
+  shrink-0
+  flex flex-row
+  items-start justify-end
+
+  gap-3 sm:gap-6 md:gap-10
+
+  relative
+
+  scale-[0.65] sm:scale-[0.75] md:scale-100
+  origin-top-right
+"
+      >
         {/* COLUMN 1 */}
         <div className="flex flex-col gap-6 md:gap-8">
           <div className="w-24 h-48 md:w-28 md:h-56 lg:w-36 lg:h-64 bg-[#345C72] rounded-b-full shadow-xl md:-mt-12">

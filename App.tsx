@@ -1,12 +1,14 @@
-import React from 'react';
-import Navbar from './components/Layout/Navbar';
-import Hero from './components/Sections/Hero';
-import InteractiveGridBackground from './components/UI/InteractiveGridBackground';
-import About from './components/Sections/About';
-import Vision from './components/Sections/Vision';
-import Work from './components/Sections/Work';
-import Contact from './components/Sections/Contact';
-import Footer from './components/Layout/Footer';
+import React from "react";
+import Navbar from "./components/Layout/Navbar";
+import Hero from "./components/Sections/Hero";
+import InteractiveGridBackground from "./components/UI/InteractiveGridBackground";
+import About from "./components/Sections/About";
+import Vision from "./components/Sections/Vision";
+import Work from "./components/Sections/Work";
+import Contact from "./components/Sections/Contact";
+import Footer from "./components/Layout/Footer";
+import "./styles/hero.css";
+
 
 const App: React.FC = () => {
   return (
@@ -15,28 +17,21 @@ const App: React.FC = () => {
       <Navbar />
 
       <main className="relative z-10">
-        {/* HOME */}
-        <section id="home" className="scroll-mt-32">
-          <Hero />
-        </section>
+        <Hero />
 
-        {/* ABOUT */}
         <section id="about" className="scroll-mt-32">
           <About />
         </section>
 
-        {/* SERVICES */}
         <section id="services" className="scroll-mt-32">
           <Work />
-          <Vision/>
-          
+          <Vision />
         </section>
 
-        {/* CONTACT */}
         <section id="contact" className="scroll-mt-32">
           <Contact />
         </section>
-      </main>
+      </main> 
 
       <Footer />
     </div>

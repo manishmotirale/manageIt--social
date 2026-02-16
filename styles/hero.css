@@ -1,0 +1,31 @@
+.hero-section {
+    min-height: 70vh;
+}
+
+/* Device width 412px (Pixel 7, scaled iPhone, XR, etc.) */
+@media (min-width: 401px) and (max-width: 430px) {
+    .hero-section {
+        min-height: 70vh;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .hero-section {
+        min-height: 75vh;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    .hero-section {
+        min-height: 90vh;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .hero-section {
+        min-height: calc(100vh - 80px);
+    }
+}
